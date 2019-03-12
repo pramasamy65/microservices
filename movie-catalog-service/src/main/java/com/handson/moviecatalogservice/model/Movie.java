@@ -1,13 +1,14 @@
-package com.handson.movieinfoservice.model;
+package com.handson.moviecatalogservice.model;
 
 public class Movie {
 
 	private String movieId;
 	private String name;
-
+	
 	public Movie() {
-
+		
 	}
+
 	public Movie(String movieId, String name) {
 		super();
 		this.movieId = movieId;
