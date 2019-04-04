@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,10 +18,11 @@ import com.handson.moviecatalogservice.model.Rating;
 @RequestMapping("/catalog")
 public class MovieCatalogResource {
 
+	@Autowired
+	private RestTemplate restTemplate;
+
 	@RequestMapping("/{userId}")
 	List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
-
-		RestTemplate restTemplate = new RestTemplate();
 
 		List<Rating> ratingsList = Arrays.asList(new Rating("100", 7), new Rating("200", 10), new Rating("300", 10));
 
